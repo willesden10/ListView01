@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>270</y>
+      <w>390</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+Adapter
+--
+An Adapter object acts as a bridge between an AdapterView
+ and the underlying data for that view. The Adapter provides 
+ access to the data items. The Adapter is also responsible 
+ for making a View for each item in the data set.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>260</x>
+      <y>470</y>
+      <w>210</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+ListAdapter</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>190</x>
+      <y>390</y>
+      <w>90</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0;70.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>560</y>
+      <w>250</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>/_abstract class BaseAdapter_/
+implements ListAdapter SpinnerAdapter</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>550</x>
+      <y>650</y>
+      <w>330</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>ArrayAdapter&lt;T&gt;
+--
+A concrete BaseAdapter that is backed by an array 
+of arbitrary objects</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>510</y>
+      <w>70</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0;50.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>510</x>
+      <y>620</y>
+      <w>60</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;40.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>700</x>
+      <y>270</y>
+      <w>350</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>/abstract class AdapterView&lt;T extends Adapter&gt;/
+extends ViewGroup
+--
+An AdapterView is a view whose children are 
+determined by an Adapter. </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>960</x>
+      <y>430</y>
+      <w>380</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>/abstract class AbsListView/
+extends AdapterView&lt;ListAdapter&gt;
+--
+Base class that can be used to implement virtualized lists 
+of items. A list does not have a spatial definition here. 
+For instance, subclases of this class can display the content 
+of the list in a grid, in a carousel, as stack, etc.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>860</x>
+      <y>370</y>
+      <w>120</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0;100.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1240</x>
+      <y>630</y>
+      <w>380</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>ListView
+--
+Base class that can be used to implement virtualized 
+lists of items. A list does not have a spatial definition here. 
+For instance, subclases of this class can display the content 
+of the list in a grid, in a carousel, as stack, etc.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1150</x>
+      <y>560</y>
+      <w>110</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0;90.0;140.0</additional_attributes>
+  </element>
+</diagram>
