@@ -9,6 +9,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
@@ -40,6 +41,9 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Suppress the soft-keyboard until the user actually touches the editText View.
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
         //when the app is created for the first time mArrayList is a new empty array.
         //when it's recreated the previous array is recovered from saveInstanceState.
@@ -110,6 +114,8 @@ public class MainActivity extends Activity {
         mEditText.getText().clear();
 
         //Hide the keyboard afted adding the item to the ListView
+        //Central system API to the overall input method framework (IMF) architecture,
+        //which arbitrates interaction between applications and the current input method
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(mEditText.getWindowToken(), 0);
     }
