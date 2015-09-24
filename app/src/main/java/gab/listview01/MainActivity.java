@@ -43,10 +43,9 @@ public class MainActivity extends Activity {
 
         //when the app is created for the first time mArrayList is a new empty array.
         //when it's recreated the previous array is recovered from saveInstanceState.
-        if(savedInstanceState == null)
-            mArrayList = new ArrayList<>();
-        else
-            mArrayList = savedInstanceState.getStringArrayList("ArrayList");
+        mArrayList = savedInstanceState == null?
+                new ArrayList<String>()
+                :savedInstanceState.getStringArrayList("ArrayList");
 
         //A concrete BaseAdapter that is backed by an array of arbitrary objects.
         // By default this class expects that the provided resource id references a single TextView.
@@ -58,7 +57,7 @@ public class MainActivity extends Activity {
         mListView = (ListView) findViewById(R.id.listview);
         mListView.setAdapter(mArrayAdapter);
 
-        //when an item of the array list is clicked a toast appear showing its text.
+        //when an item of the array list is clicked a toast appear showing the text that the item contains.
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             //parent: The AdapterView where the click happened.
